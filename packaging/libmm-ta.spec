@@ -1,19 +1,16 @@
-
 Name:       libmm-ta
 Summary:    Multimedia Framework Time Analysis Lib
-Version:    0.1.2
+Version:	0.1.4
 Release:    1
 Group:      System/Libraries
-License:    TO BE FILLED IN
-Source0:    libmm-ta-%{version}.tar.bz2
+License:    Apache-2.0
+Source0:    libmm-ta-%{version}.tar.gz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 
 
 %description
 Multimedia Framework Time Analysis Library
-
-
 
 %package devel
 Summary:    Dev. components for the libmm-ta package (devel)
@@ -29,33 +26,23 @@ Development components for the libmm-ta package (devel)
 
 
 %build
-
-%autogen --disable-static
-%configure --disable-static
+%autogen 
+%configure 
 make %{?jobs:-j%jobs}
 
 %install
-rm -rf %{buildroot}
 %make_install
-
-
-
 
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 
-
-
-
 %files
-%defattr(-,root,root,-)
 /usr/lib/libmm_ta.so.*
 
 
 %files devel
-%defattr(-,root,root,-)
 /usr/include/mm_ta/*.h
 /usr/lib/*.so
 /usr/lib/pkgconfig/*.pc
