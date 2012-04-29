@@ -26,16 +26,24 @@ Development components for the libmm-ta package (devel)
 
 
 %build
-%autogen 
-%configure 
+
+%autogen --disable-static
+%configure --disable-static
 make %{?jobs:-j%jobs}
 
 %install
+rm -rf %{buildroot}
 %make_install
+
+
+
 
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
+
+
+
 
 
 %files
