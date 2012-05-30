@@ -5,6 +5,7 @@ Release:    1
 Group:      System/Libraries
 License:    Apache-2.0
 Source0:    libmm-ta-%{version}.tar.gz
+Source1001: packaging/libmm-ta.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 
@@ -26,6 +27,7 @@ Development components for the libmm-ta package (devel)
 
 
 %build
+cp %{SOURCE1001} .
 
 %autogen --disable-static
 %configure --disable-static
@@ -47,10 +49,12 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest libmm-ta.manifest
 /usr/lib/libmm_ta.so.*
 
 
 %files devel
+%manifest libmm-ta.manifest
 /usr/include/mm_ta/*.h
 /usr/lib/*.so
 /usr/lib/pkgconfig/*.pc
