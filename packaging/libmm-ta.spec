@@ -1,9 +1,11 @@
+#sbs-git:slp/pkgs/l/libmm-ta libmm-ta 0.1.4 1859a89ab9fa666d844abd894b10584e408604f5
+
 Name:       libmm-ta
 Summary:    Multimedia Framework Time Analysis Lib
-Version:	0.1.4
+Version: 0.1.4
 Release:    1
 Group:      System/Libraries
-License:    Apache-2.0
+License:    TO BE FILLED IN
 Source0:    libmm-ta-%{version}.tar.gz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -11,6 +13,8 @@ Requires(postun): /sbin/ldconfig
 
 %description
 Multimedia Framework Time Analysis Library
+
+
 
 %package devel
 Summary:    Dev. components for the libmm-ta package (devel)
@@ -47,10 +51,12 @@ rm -rf %{buildroot}
 
 
 %files
+%defattr(-,root,root,-)
 /usr/lib/libmm_ta.so.*
 
 
 %files devel
+%defattr(-,root,root,-)
 /usr/include/mm_ta/*.h
 /usr/lib/*.so
 /usr/lib/pkgconfig/*.pc
