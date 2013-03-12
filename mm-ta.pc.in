@@ -1,0 +1,10 @@
+prefix = @prefix@
+exec_prefix=@exec_prefix@
+libdir = @libdir@
+includedir = @includedir@
+
+Name : mm-ta
+Description : Multimedia Framework Time Analysis Library
+Version : @VERSION@
+Libs : -L${libdir} -lmm_ta
+Cflags : -I${includedir}/mm_ta
