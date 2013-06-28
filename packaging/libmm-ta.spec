@@ -7,6 +7,7 @@ Release:    2
 Group:      System/Libraries
 License:    Apache-2.0
 Source0:    libmm-ta-%{version}.tar.gz
+Source1001: 	libmm-ta.manifest
 
 
 %description
@@ -25,6 +26,7 @@ Development components for the libmm-ta package (devel)
 
 %prep
 %setup -q 
+cp %{SOURCE1001} .
 
 
 %build
@@ -49,12 +51,13 @@ rm -rf %{buildroot}
 
 
 %files
-%manifest libmm-ta.manifest
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %_libdir/libmm_ta.so.*
 
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %_includedir/mm_ta/*.h
 %_libdir/*.so
