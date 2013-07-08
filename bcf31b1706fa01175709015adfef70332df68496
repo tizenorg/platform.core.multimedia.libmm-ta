@@ -1,0 +1,8 @@
+Change-Id: Ibcf31b1706fa01175709015adfef70332df68496
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 10:06:19 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4590
+Project: platform/core/multimedia/libmm-ta
+Branch: refs/heads/tizen
