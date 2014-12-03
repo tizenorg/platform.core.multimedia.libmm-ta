@@ -458,7 +458,7 @@ int gst_ta_accum_item_end(char* name, int show, char* filename, int line)
 	accum->elapsed_min = tval < accum->elapsed_min ? tval : accum->elapsed_min;
 
 	if ( show )
-		printf("[ACCUM END] %s : %ld + %d ---(%s:%d)\n", name, accum->elapsed_accum, tval, filename, line );
+		printf("[ACCUM END] %s : %ld + %u ---(%s:%d)\n", name, accum->elapsed_accum, tval, filename, line );
 
 	/* add elapsed time */
 	accum->elapsed_accum += tval;
